@@ -4,9 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by rkpandey on 9/13/17.
+ * A plain old java object (POJO) which holds the data for a contact (person)
  */
-
 public class Contact {
 
     private String mName;
@@ -28,6 +27,7 @@ public class Contact {
     public static List<Contact> createContacts(int numContacts) {
         List<Contact> contacts = new ArrayList<>();
         for (int i = 1; i <= numContacts; i++) {
+            // The first half of the contacts created will be online
             contacts.add(new Contact("Person " + i, i <= numContacts / 2));
         }
         return contacts;

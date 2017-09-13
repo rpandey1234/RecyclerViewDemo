@@ -20,9 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView rvContacts = (RecyclerView) findViewById(R.id.rvContacts);
 
+        // Initialize contacts
         List<Contact> contacts = Contact.createContacts(20);
+        // Create adapter passing in the sample user data
         ContactsAdapter contactsAdapter = new ContactsAdapter(this, contacts);
+        // Attach the adapter to the recyclerview to populate items
         rvContacts.setAdapter(contactsAdapter);
+        // Set layout manager to position the items
         rvContacts.setLayoutManager(new LinearLayoutManager(this));
     }
 }
