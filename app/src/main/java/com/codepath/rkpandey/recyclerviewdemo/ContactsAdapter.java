@@ -64,14 +64,15 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         public void bind(final Contact contact) {
             tvName.setText(contact.getName());
             btnOnline.setEnabled(contact.isOnline());
-            // TODO: strings should come from a resource file
-            btnOnline.setText(contact.isOnline() ? "Message" : "Offline");
+            String btnText = mContext.getString(contact.isOnline()
+                    ? R.string.message : R.string.offline);
+            btnOnline.setText(btnText);
             btnOnline.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 //                    Toast.makeText(mContext, contact.getName(), Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(mContext, ContactDetailActivity.class);
-                    intent.putExtra("name", contact.getName());
+                    intent.putExtra(ContactDetailActivity.NAME_EXTRA, contact.getName());
                     mContext.startActivity(intent);
                 }
             });

@@ -6,13 +6,15 @@ import android.widget.TextView;
 
 public class ContactDetailActivity extends AppCompatActivity {
 
+    public static final String NAME_EXTRA = "ContactDetailActivity.NAME";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_detail);
 
         TextView tvName = (TextView) findViewById(R.id.tvName);
-        String name = getIntent().getStringExtra("name");
+        String name = getIntent().getStringExtra(NAME_EXTRA);
         tvName.setText(name);
     }
 }

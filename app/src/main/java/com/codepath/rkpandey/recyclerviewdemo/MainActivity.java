@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 
 import java.util.List;
 
+/**
+ * Guide from https://guides.codepath.com/android/using-the-recyclerview
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
